@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="synthwave">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+  <title>Desarrollo inicial</title>
+</head>
+
+
+<style>
+  :root {
+    font-size: clamp(14px, 0.5vw + 10px, 22px);
+  }
+
+
+  .heading {
+    font-family: 'Saira Extra Condensed', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+
+  #name {
+    font-size: 14vw;
+  }
+</style>
+
+
+<body class="p-10" style="font-family: Mulish, sans-serif;">
+
+
+  <div id="wrapper" class="">
+    <div id="resumen" class="flex gap-16 mb-10">
+
+
+      <div class="izq w-3/12">
+        <img id="foto" class=" rounded" src="https://anselmovalenzuela.github.io/img/img-anselmo.jpg" alt="">
+        <div id="redes" class="flex flex-wrap ">
+          <a href="" class="text-[2rem] w-full hover:text-accent">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a href="" class="text-[2rem] w-full hover:text-accent">
+            <i class="fa-brands fa-github"></i>
+            github
+          </a>
+        </div>
+      </div>
+
+
+      <div id="side-data" class="w-7/12">
+        <div id="name" class="heading font-black leading-[0.8]">Anselmo</div>
+        <div id="contact" class="text-xl flex gap-5">
+          <p id="charge" class="text-primary text-xl">Developer</p>
+          <p id="punto">·</p>
+          <p id="correo">test@test.com</p>
+          <p id="telefono">+543415697700</p>
+        </div>
+
+
+        <div class="bio text-accent text-xl mt-5">
+          Soy un desarrollador apasionado por la creación de experiencias digitales únicas.
+          Me motiva transformar ideas en proyectos funcionales y atractivos, combinando diseño
+          y tecnología para lograr soluciones que impacten positivamente. Disfruto aprender
+          nuevas herramientas, colaborar en equipo y enfrentar desafíos que me permitan crecer
+          profesionalmente y aportar valor en cada proyecto.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cards-container flex gap-5 font-medium">
+      <div class="card w-2/6 bg-base-200 shadow-xl">
+        <div class="card-body">
+          <h2 id="experiencias" class="heading card-title text-5xl mb-3">Experiencia</h2>
+          <p class="text-secondary text-xl">Más de 5 años liderando proyectos de desarrollo web, gestionando
+            equipos multidisciplinarios y asegurando la entrega de soluciones tecnológicas innovadoras en tiempo
+            y forma.</p>
+        </div>
+      </div>
+
+
+      <div class="card w-2/6 bg-base-200 shadow-xl">
+        <div class="card-body">
+          <h2 id="educacion" class="heading card-title text-5xl mb-3">Educación</h2>
+          <p class="text-secondary text-xl">Licenciatura en Ingeniería en Sistemas de Información, Universidad
+            Nacional de Rosario. Cursos complementarios en metodologías ágiles, UX/UI y análisis de datos.</p>
+        </div>
+      </div>
+
+
+      <div class="card w-2/6 bg-base-200 shadow-xl">
+        <div class="card-body">
+          <h2 id="habilidades" class="heading card-title text-5xl mb-3">Habilidades</h2>
+          <p class="text-secondary text-xl">Dominio de HTML, CSS, JavaScript y frameworks modernos. Experiencia en
+            liderazgo, comunicación efectiva y resolución de problemas complejos. Capacidad para adaptarse
+            rápidamente a nuevas tecnologías.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#wrapper",
+        start: "top 10%",
+        end: "+=120%",
+        scrub: 1,
+        pin: true,
+      }
+    });
+
+
+    tl.from("#foto", {
+      // x: "60",
+      xPercent: 250,
+      yPercent: 40,
+      // height: "36rem",
+      // width: "50rem",
+      scale: 1.5,
+      borderRadius: "50%",
+      duration: 2,
+      ease: "power2.inOut"
+    }, 0);
+
+
+    // tl.from("#telefono", {
+    //   x: '-35dvw',
+    //   // xPercent: -380,
+    //   y: "29vh",
+    //   duration: 2,
+    //   ease: "power2.inOut"
+    // }, 0);
+
+
+    tl.from("#correo", {
+      x: '-26.6dvw',
+      // xPercent: -330, // Alineado verticalmente con teléfono
+      y: "27vh",
+      scale: 1.2,
+      transformOrigin: "left center",
+      duration: 2,
+      ease: "power2.inOut"
+    }, 0);
+
+
+    tl.from("#charge", {
+      // xPercent: -300,
+      x: "-30vh",
+      y: "50vh",
+      scale: 3,
+      transformOrigin: "center bottom",
+      fontWeight: "bold",
+      duration: 2,
+      ease: "power2.inOut"
+    }, 0);
+
+
+    tl.from("#redes", {
+      // xPercent: 50,
+      x: "12rem",
+      yPercent: -110,//"-12dvh",
+      // transformOrigin: "left center",
+      scale: 1.2,
+      duration: 2,
+      ease: "power2.inOut"
+    }, 0);
+
+
+    tl.from("#name", {
+      xPercent: -40,
+      // y: "5vh",
+      // scale: 1.2,
+      duration: 2,
+      ease: "power2.inOut"
+    }, 0);
+
+
+    tl.from([".bio", "#telefono", "#punto"], {
+      autoAlpha: 0,
+      y: 20,
+      duration: 1
+    }, 0.8);
+
+
+    tl.from(".cards-container", {
+      autoAlpha: 0,
+      y: 50,
+      duration: 1
+    }, 1.2);
+  </script>
+</body>
+
+
+</html>
+
